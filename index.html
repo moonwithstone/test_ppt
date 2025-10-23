@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医养金融服务商业计划书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="app/globals.css">
+    <style>
+        body {
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+        }
+        
+        /* Slide container */
+        .slide {
+            width: 100%;
+            max-width: 1200px;
+            min-height: 680px;
+            margin: 2rem auto;
+            padding: 4rem 5rem;
+            /* Added background image */
+            background-image: url('/slide-background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.08), 0 10px 20px -10px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Decorative elements */
+        .slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e5a6e 0%, #3b82f6 100%);
+        }
+        
+        /* Updated typography - title now 24px with green color #0C814C */
+        .slide-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #0C814C;
+            margin-bottom: 2rem;
+            margin-top: 0;
+            line-height: 1.4;
+            letter-spacing: 0;
+        }
+        
+        .slide-subtitle {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 1.5rem;
+        }
+        
+        .slide-content {
+            font-size: 1.125rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+        
+        /* Placeholder styling */
+        .placeholder {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            color: #92400e;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid #fbbf24;
+        }
+        
+        /* Slide counter */
+        .slide-counter {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #94a3b8;
+            letter-spacing: 0.05em;
+        }
+        
+        /* KPI Cards */
+        .kpi-card {
+            padding: 2rem;
+            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+            border: 1px solid #bfdbfe;
+            transition: all 0.3s ease;
+        }
+        
+        .kpi-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.15);
+        }
+        
+        .kpi-card-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #1e40af;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+        
+        .kpi-card-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            line-height: 1;
+        }
+        
+        .kpi-card-unit {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-left: 0.25rem;
+            color: #3b82f6;
+        }
+        
+        /* Feature cards */
+        .feature-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 8px 24px rgba(59, 130, 246, 0.12);
+        }
+        
+        .feature-card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        /* Strategy boxes */
+        .strategy-box {
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 2px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .strategy-box:hover {
+            transform: translateX(4px);
+        }
+        
+        .strategy-box.old {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+        
+        .strategy-box.new {
+            background: #f0fdf4;
+            border-color: #86efac;
+        }
+        
+        /* Table of contents items */
+        .toc-item {
+            padding: 1.5rem 2rem;
+            background: white;
+            border-radius: 0.75rem;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+        
+        .toc-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+        }
+        
+        /* Chain boxes */
+        .chain-box {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background: white;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .chain-box:hover {
+            border-color: #3b82f6;
+            box-shadow: 0 4px 16px rgba(59, 130, 246, 0.1);
+        }
+        
+        .chain-box.highlight {
+            background: linear-gradient(135deg, #dbeafe 0%, #e0f2fe 100%);
+            border-color: #3b82f6;
+        }
+        
+        .chain-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        /* List styling */
+        .custom-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .custom-list li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+        
+        .custom-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: 700;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 2rem 1.5rem;
+                min-height: auto;
+            }
+            
+            .slide-title {
+                font-size: 2rem;
+            }
+            
+            .kpi-card-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 py-8">
+
+    <!-- Slide 1: Cover Page -->
+    <div class="slide text-center">
+        <div class="mb-8">
+            <div class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
+                战略合作提案
+            </div>
+        </div>
+        <h1 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#1e5a6e] to-[#3b82f6] bg-clip-text text-transparent leading-tight">
+            深化"圈链群"协同<br>构建医养金融新生态
+        </h1>
+        <h2 class="text-2xl text-slate-600 mb-12 font-medium">
+            针对 <span class="placeholder">[ 目标客户，如：XX医养集团 ]</span> 的综合金融服务商业计划书
+        </h2>
+        <div class="absolute bottom-12 left-0 right-0">
+            <p class="text-lg text-slate-500">
+                提案团队：<span class="placeholder">[ 您的部门/分行 ]</span>
+            </p>
+            <p class="text-sm text-slate-400 mt-2">2025年10月</p>
+        </div>
+        <div class="slide-counter">1 / 16</div>
+    </div>
+
+    <!-- Slide 2: Executive Summary -->
+    <div class="slide">
+        <h2 class="slide-title">执行摘要：我们的"航母级"客户开拓计划</h2>
+        <div class="slide-content space-y-6">
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-blue-600">1</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">目标客户</h3>
+                    <p><span class="placeholder">[ XX医养集团 ]</span>，一个集"医疗、养老、康复"于一体的超级综合体。</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-green-600">2</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">市场机遇</h3>
+                    <p>医养行业正处爆发期，客户（医院、养老院）面临巨额扩建投资、海量现金流管理、员工及客户金融服务三大需求。</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-purple-600">3</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">核心策略</h3>
+                    <p class="mb-3">摒弃传统"单点"营销，采用"圈-链-群"协同作战模式。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-700 mb-1">圈（生态圈）</h4>
+                            <p class="text-sm">锁定支付场景，构建闭环生态</p>
+                        </div>
+                        <div class="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-bold text-green-700 mb-1">链（产业链）</h4>
+                            <p class="text-sm">渗透业务全链，从上游到下游</p>
+                        </div>
+                        <div class="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-bold text-orange-700 mb-1">群（客群）</h4>
+                            <p class="text-sm">批量获客，深挖三大核心客群</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center">
+                    <span class="text-2xl font-bold text-amber-600">4</span>
+                </div>
+                <div>
+                    <h3 class="font-bold text-xl text-slate-800 mb-2">预期目标</h3>
+                    <p>打造区域"医养金融"第一标杆，实现<span class="font-bold text-blue-600">存款、营收、客户</span>三大增长。</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">2 / 16</div>
+    </div>
+
+    <!-- Slide 3: Table of Contents -->
+    <div class="slide">
+        <h2 class="slide-title text-center mb-12">目 录</h2>
+        <div class="slide-content">
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="toc-item">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-slate-800">1. 机遇与挑战</span>
+                        <span class="text-slate-400 text-sm">我们为何而来</span>
+                    </div>
+                </div>
+                <div class="toc-item">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-slate-800">2. 客户全景透视</span>
+                        <span class="text-slate-400 text-sm">我们的"战场"在哪</span>
+                    </div>
+                </div>
+                <div class="toc-item">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-slate-800">3. "圈链群"核心战略</span>
+                        <span class="text-slate-400 text-sm">我们的"打法"是什么</span>
+                    </div>
+                </div>
+                <div class="toc-item">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-slate-800">4. 实施路径与团队</span>
+                        <span class="text-slate-400 text-sm">我们如何"作战"</span>
+                    </div>
+                </div>
+                <div class="toc-item">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xl font-bold text-slate-800">5. 目标与效益预估</span>
+                        <span class="text-slate-400 text-sm">我们能"赢"得什么</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">3 / 16</div>
+    </div>
+
+    <!-- Slide 4: Market Opportunity -->
+    <div class="slide">
+        <h2 class="slide-title">1.1 市场机遇：医养行业——万亿级的蓝海市场</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="feature-card border-blue-200">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-blue-700">政策驱动</h3>
+                    <p class="text-slate-600">国家"健康中国"与积极应对老龄化战略，医养结合服务获政策空前支持。</p>
+                </div>
+                
+                <div class="feature-card border-green-200">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-green-700">市场刚需</h3>
+                    <div class="p-4 bg-green-50 rounded-lg">
+                        <p class="text-sm text-green-700 italic">*此处可插入国家或地区老龄化人口数据图表*</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card border-red-200">
+                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-red-700">客户痛点</h3>
+                    <ul class="custom-list text-slate-600">
+                        <li><strong>巨额投资：</strong>百亿级资金缺口</li>
+                        <li><strong>现金流复杂：</strong>流水巨大，管理诉求高</li>
+                        <li><strong>服务壁垒：</strong>三大群体集中，但金融难渗透</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">4 / 16</div>
+    </div>
+
+    <!-- Slide 5: Customer Overview (Hospital) -->
+    <div class="slide">
+        <h2 class="slide-title">2.1 目标客户（医院）全景</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left: Positioning -->
+                <div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-slate-800 mb-4">客户定位与战略</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3">
+                                <span class="font-bold text-blue-600 mt-1">▪</span>
+                                <p><strong>客户定位：</strong><span class="placeholder">[ 如：民营三甲综合医院 ]</span>，区域医疗中心</p>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="font-bold text-blue-600 mt-1">▪</span>
+                                <p><strong>核心战略：</strong>深度构建"医疗-养老-康复"融合生态</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl border-2 border-blue-200">
+                        <h3 class="text-xl font-bold text-blue-800 mb-3">增长引擎（在建项目）</h3>
+                        <p class="text-slate-700 mb-2">
+                            <span class="placeholder">[ 如：医院二期项目 ]</span>
+                        </p>
+                        <div class="text-center mt-4">
+                            <p class="text-sm text-blue-700 mb-1">总投资</p>
+                            <p class="text-5xl font-extrabold text-blue-600">18<span class="text-2xl">亿元</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right: KPI Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="kpi-card">
+                        <div class="kpi-card-title">总员工</div>
+                        <div class="kpi-card-value">1,777<span class="kpi-card-unit">人</span></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-title">床位数</div>
+                        <div class="kpi-card-value">1,200<span class="kpi-card-unit">张</span></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-title">日均门诊</div>
+                        <div class="kpi-card-value">2,936<span class="kpi-card-unit">人次</span></div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-card-title">床位使用率</div>
+                        <div class="kpi-card-value">~70<span class="kpi-card-unit">%</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">5 / 16</div>
+    </div>
+
+    <!-- Slide 6: Employee Structure -->
+    <div class="slide">
+        <h2 class="slide-title">2.2 核心客群（医院员工）结构</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left: Overview -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">总览：医院总员工 1,777人</h3>
+                    <div class="p-6 bg-white border-2 border-slate-200 rounded-xl mb-6">
+                        <p class="text-center font-semibold mb-4 text-slate-500 text-sm">【数据图表：环形饼图】</p>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="text-center p-4 bg-blue-50 rounded-lg">
+                                <p class="text-3xl font-bold text-blue-600">42%</p>
+                                <p class="text-sm text-slate-600 mt-1">护理团队<br>(752人)</p>
+                            </div>
+                            <div class="text-center p-4 bg-green-50 rounded-lg">
+                                <p class="text-3xl font-bold text-green-600">58%</p>
+                                <p class="text-sm text-slate-600 mt-1">医师与技师等<br>(1025人)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="custom-list space-y-2">
+                        <li><strong>核心群体：</strong>护理团队 (752人) + 医师技师团队</li>
+                        <li><strong>高价值群体：</strong>副主任医师以上 (121人) + 博硕士导师 (27人)</li>
+                    </ul>
+                </div>
+                
+                <!-- Right: High-value segments -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">高价值客群指标</h3>
+                    <div class="space-y-4">
+                        <div class="p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl border-2 border-green-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-semibold text-green-700 uppercase tracking-wide">高知客群 (本科+)</span>
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+                            </div>
+                            <p class="text-5xl font-extrabold text-green-600">70%</p>
+                        </div>
+                        
+                        <div class="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl border-2 border-blue-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-semibold text-blue-700 uppercase tracking-wide">高收入客群 (副高+)</span>
+                                <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                            </div>
+                            <p class="text-5xl font-extrabold text-blue-600">137<span class="text-2xl ml-1">人</span></p>
+                        </div>
+                        
+                        <div class="p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl border-2 border-purple-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-sm font-semibold text-purple-700 uppercase tracking-wide">顶尖专家 (博导)</span>
+                                <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
+                            <p class="text-5xl font-extrabold text-purple-600">27<span class="text-2xl ml-1">人</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">6 / 16</div>
+    </div>
+
+    <!-- Slide 7: Group Ecosystem -->
+    <div class="slide">
+        <h2 class="slide-title">2.3 目标客户（集团）全景：庞大的养老生态</h2>
+        <div class="slide-content">
+            <div class="mb-6">
+                <p class="text-xl"><strong>核心资产：</strong> <span class="placeholder">[ 如：XX健康养护中心 ]</span></p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Existing -->
+                <div class="p-8 bg-white border-2 border-slate-300 rounded-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-7 h-7 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-700">一期、二期（存量）</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center">
+                            <span class="text-slate-600">总投资</span>
+                            <span class="text-2xl font-bold text-slate-800">38.43亿元</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-slate-600">床位数</span>
+                            <span class="text-2xl font-bold text-slate-800">7,916张</span>
+                        </li>
+                        <li class="p-4 bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border-2 border-green-300">
+                            <p class="text-3xl font-extrabold text-green-700 text-center mb-1">入住率：100%</p>
+                            <p class="text-center text-green-600 text-sm">（现金流稳定且充裕）</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- New -->
+                <div class="p-8 bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-700">三期（增量）</h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center">
+                            <span class="text-blue-700">规划床位</span>
+                            <span class="text-2xl font-bold text-blue-800">4,694张</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span class="text-blue-700">预计接纳</span>
+                            <span class="text-2xl font-bold text-blue-800">约3,000位老人</span>
+                        </li>
+                        <li class="p-4 bg-white/70 rounded-lg border-2 border-blue-200">
+                            <p class="text-center font-bold text-blue-700">对公投资/对私养老金</p>
+                            <p class="text-center text-2xl font-extrabold text-blue-600 mt-2">空间巨大</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">7 / 16</div>
+    </div>
+
+    <!-- Slide 8: Core Strategy -->
+    <div class="slide">
+        <h2 class="slide-title">3.1 核心战略：从"单点"到"圈、链、群"立体作战</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Old Model -->
+                <div class="strategy-box old">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-red-700">传统模式（失败点）</h3>
+                    </div>
+                    <ul class="custom-list space-y-3 text-slate-700">
+                        <li>只盯对公存款，忽视员工和患者</li>
+                        <li>产品单一，无法满足医院复杂场景</li>
+                        <li>各部门单打独斗，被各个击破</li>
+                    </ul>
+                </div>
+                
+                <!-- New Model -->
+                <div class="strategy-box new">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-700">"圈链群"新模式（制胜点）</h3>
+                    </div>
+                    <ul class="custom-list space-y-3 text-slate-700">
+                        <li><strong class="text-green-700">圈（生态圈）：</strong>以支付为入口，构建金融服务闭环</li>
+                        <li><strong class="text-green-700">链（产业链）：</strong>上控、下拓、中抓，渗透全链</li>
+                        <li><strong class="text-green-700">群（客群）：</strong>批量拓展老人、员工零售业务</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">8 / 16</div>
+    </div>
+
+    <!-- Slide 9: Circle Strategy -->
+    <div class="slide">
+        <h2 class="slide-title">3.2 "圈"字诀：抢占场景，构建两大生态圈</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Ecosystem 1 -->
+                <div class="p-6 bg-gradient-to-br from-blue-50 to-cyan-50 border-2 border-blue-300 rounded-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-bold text-white">1</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-800">集团养老生态圈</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm font-semibold text-blue-700 mb-1">场景</p>
+                            <p class="text-slate-700">养老社区三期缴费 <span class="font-bold text-blue-600">(年超1亿)</span></p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-blue-700 mb-1">产品</p>
+                            <p class="text-slate-700">聚合支付方案</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-blue-700 mb-2">延伸</p>
+                            <ul class="custom-list space-y-2 text-slate-700">
+                                <li>个人养老金账户 <span class="font-bold">(目标3000个)</span></li>
+                                <li>"建行生活"商户入驻 <span class="font-bold">(目标4000户)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ecosystem 2 -->
+                <div class="p-6 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-xl">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl font-bold text-white">2</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-800">医院配套生态圈</h3>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-sm font-semibold text-green-700 mb-1">场景</p>
+                            <p class="text-slate-700">配套酒店、商超、停车场缴费</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-green-700 mb-1">产品</p>
+                            <p class="text-slate-700">聚合支付、POS机、无感支付</p>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-green-700 mb-2">数据 (年收单)</p>
+                            <ul class="custom-list space-y-2 text-slate-700">
+                                <li>酒店：<span class="font-bold">2000万元</span></li>
+                                <li>商超：<span class="font-bold">4000万元</span></li>
+                                <li>停车场：<span class="font-bold">300万元</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">9 / 16</div>
+    </div>
+
+    <!-- Slide 10: Chain Strategy -->
+    <div class="slide">
+        <h2 class="slide-title">3.3 "链"字诀：渗透全链，锁定四大环节</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <!-- Upstream -->
+                <div class="chain-box">
+                    <div class="chain-title text-slate-700">上游（供应链）</div>
+                    <ul class="custom-list space-y-2 text-sm">
+                        <li>对公结算账户 (13户)</li>
+                        <li>公司贷款 (3000万)</li>
+                        <li>普惠贷款 (2000万)</li>
+                    </ul>
+                </div>
+                
+                <!-- Core -->
+                <div class="chain-box highlight">
+                    <div class="chain-title text-blue-700">核心（医院）</div>
+                    <ul class="custom-list space-y-2 text-sm">
+                        <li>新增存款 (1亿)</li>
+                        <li>银行承兑汇票 (4亿)</li>
+                        <li>定制理财 (2.5亿)</li>
+                    </ul>
+                </div>
+                
+                <!-- Midstream -->
+                <div class="chain-box">
+                    <div class="chain-title text-green-700">中游（医护）</div>
+                    <ul class="custom-list space-y-2 text-sm">
+                        <li>代发工资 (1700人)</li>
+                        <li>信用卡 (1200张)</li>
+                        <li>消费贷 (3000万)</li>
+                    </ul>
+                </div>
+                
+                <!-- Downstream -->
+                <div class="chain-box">
+                    <div class="chain-title text-slate-700">下游（患者）</div>
+                    <ul class="custom-list space-y-2 text-sm">
+                        <li>储蓄卡发卡 (500张)</li>
+                        <li>社保卡换卡 (1300张)</li>
+                        <li>医保移动支付 (2000万)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Flow arrows -->
+            <div class="mt-6 flex items-center justify-center gap-4 text-blue-500">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+            </div>
+        </div>
+        <div class="slide-counter">10 / 16</div>
+    </div>
+
+    <!-- Slide 11: Group Strategy -->
+    <div class="slide">
+        <h2 class="slide-title">3.4 "群"字诀：深耕客群，批量转化高价值零售客户</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left: Positioning -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">客群定位</h3>
+                    <div class="p-6 bg-gradient-to-br from-purple-50 to-pink-50 border-2 border-purple-200 rounded-xl mb-6">
+                        <p class="text-xl font-bold text-purple-700">养老客群</p>
+                        <p class="text-slate-600 mt-2">（高净值、需求稳定）</p>
+                    </div>
+                    
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">服务场景</h3>
+                    <ul class="custom-list space-y-3">
+                        <li><strong>驻点服务：</strong>设立院内/养老院内金融服务点</li>
+                        <li><strong>专属讲座：</strong>金融知识、反欺诈宣传 <span class="font-bold text-blue-600">(年12场)</span></li>
+                    </ul>
+                </div>
+                
+                <!-- Right: Products -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">转化产品（*以燕达为例*）</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="kpi-card">
+                            <div class="kpi-card-title">个人养老金账户</div>
+                            <div class="kpi-card-value">3,000<span class="kpi-card-unit">个</span></div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-card-title">CTS签约</div>
+                            <div class="kpi-card-value">3,000<span class="kpi-card-unit">户</span></div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-card-title">理财/基金销售</div>
+                            <div class="kpi-card-value">2,000<span class="kpi-card-unit">万</span></div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-card-title">保险销售</div>
+                            <div class="kpi-card-value">1,000<span class="kpi-card-unit">万</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">11 / 16</div>
+    </div>
+
+    <!-- Slide 12: Strategic Loop -->
+    <div class="slide">
+        <h2 class="slide-title">3.5 战略闭环："圈链群"协同作战数据预估</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
+                <div class="kpi-card">
+                    <div class="kpi-card-title">新增存款 (医院)</div>
+                    <div class="kpi-card-value">1<span class="kpi-card-unit">亿</span></div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-card-title">支付结算 (承兑)</div>
+                    <div class="kpi-card-value">4<span class="kpi-card-unit">亿</span></div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-card-title">对公理财</div>
+                    <div class="kpi-card-value">2.5<span class="kpi-card-unit">亿</span></div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-card-title">公司类贷款</div>
+                    <div class="kpi-card-value">5,000<span class="kpi-card-unit">万</span></div>
+                </div>
+                <div class="kpi-card bg-gradient-to-br from-green-50 to-emerald-50 border-green-300">
+                    <div class="kpi-card-title text-green-700">代发工资</div>
+                    <div class="kpi-card-value text-green-600">1,700<span class="kpi-card-unit">人</span></div>
+                </div>
+                <div class="kpi-card bg-gradient-to-br from-green-50 to-emerald-50 border-green-300">
+                    <div class="kpi-card-title text-green-700">个人养老金</div>
+                    <div class="kpi-card-value text-green-600">3,000<span class="kpi-card-unit">户</span></div>
+                </div>
+                <div class="kpi-card bg-gradient-to-br from-green-50 to-emerald-50 border-green-300">
+                    <div class="kpi-card-title text-green-700">信用卡</div>
+                    <div class="kpi-card-value text-green-600">1,200<span class="kpi-card-unit">张</span></div>
+                </div>
+                <div class="kpi-card bg-gradient-to-br from-green-50 to-emerald-50 border-green-300">
+                    <div class="kpi-card-title text-green-700">消费贷款</div>
+                    <div class="kpi-card-value text-green-600">3,000<span class="kpi-card-unit">万</span></div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-card-title">场景支付流水 (年)</div>
+                    <div class="kpi-card-value">1.6+<span class="kpi-card-unit">亿</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">12 / 16</div>
+    </div>
+
+    <!-- Slide 13: Implementation -->
+    <div class="slide">
+        <h2 class="slide-title">4.1 实施路径与组织保障</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Three Steps -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">三步走</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
+                                <span class="text-xl font-bold text-white">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-1">顶层设计</h4>
+                                <p class="text-slate-600">成立跨部门"圈链群"专班，机构部牵头</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center">
+                                <span class="text-xl font-bold text-white">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-1">高层联动</h4>
+                                <p class="text-slate-600">深度走访，建立高层战略互信</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 bg-purple-500 rounded-lg flex items-center justify-center">
+                                <span class="text-xl font-bold text-white">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-slate-800 mb-1">场景落地</h4>
+                                <p class="text-slate-600">聚焦"医院经营、医护人员、老年客户"三大场景，快速落地拳头产品</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Organization -->
+                <div class="p-8 bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-300 rounded-xl">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">组织核心</h3>
+                    <p class="text-lg text-slate-700 leading-relaxed">
+                        以<span class="font-bold text-blue-600">"专班"</span>为指挥中心，多部门（公司、个金、房金、网金）高效协同，聚焦 <span class="font-bold text-green-600">"增存增收"</span>。
+                    </p>
+                    
+                    <div class="mt-6 p-4 bg-white rounded-lg">
+                        <p class="text-center text-sm text-slate-500 mb-3">协同部门</p>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">公司部</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-semibold">个金部</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">房金部</span>
+                            <span class="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">网金部</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">13 / 16</div>
+    </div>
+
+    <!-- Slide 14: Goals & Benefits -->
+    <div class="slide">
+        <h2 class="slide-title">5.1 核心目标与战略价值</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Core KPIs -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-6">核心KPI（预估）</h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+                            <h4 class="font-bold text-blue-700 mb-2">对公</h4>
+                            <p class="text-slate-700">存款1亿、承兑4亿、理财2.5亿、贷款5000万</p>
+                        </div>
+                        
+                        <div class="p-4 bg-green-50 border-l-4 border-green-500 rounded-lg">
+                            <h4 class="font-bold text-green-700 mb-2">零售</h4>
+                            <p class="text-slate-700">代发1700人、养老金3000户、信用卡1200张</p>
+                        </div>
+                        
+                        <div class="p-4 bg-purple-50 border-l-4 border-purple-500 rounded-lg">
+                            <h4 class="font-bold text-purple-700 mb-2">场景</h4>
+                            <p class="text-slate-700">聚合支付流水超1.6亿/年</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Strategic Value -->
+                <div class="p-8 bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300 rounded-xl">
+                    <h3 class="text-2xl font-bold text-green-800 mb-6">战略价值</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-green-800 mb-1">财务</h4>
+                                <p class="text-green-700">实现对公、零售"双轮驱动"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg text-green-800 mb-1">标杆</h4>
+                                <p class="text-green-700">打造区域"医养金融"样板间，构建生态壁垒</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">14 / 16</div>
+    </div>
+
+    <!-- Slide 15: Why Choose Us -->
+    <div class="slide">
+        <h2 class="slide-title text-center">为什么选择我们？</h2>
+        <div class="slide-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="feature-card border-blue-200">
+                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-blue-700">最懂医养的金融伙伴</h3>
+                    <p class="text-slate-600">深刻理解医养行业（投资、运营、客群）的综合需求</p>
+                </div>
+                
+                <div class="feature-card border-green-200">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-green-700">最强的产品组合拳</h3>
+                    <p class="text-slate-600">具备"商行+投行+个金+科技"的全方位服务能力</p>
+                </div>
+                
+                <div class="feature-card border-purple-200">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-purple-700">最快的总分行联动</h3>
+                    <p class="text-slate-600">（*以建行为例*）强大的总行资源与省分行支持，能为客户提供最高效、最优惠的政策</p>
+                </div>
+                
+                <div class="feature-card border-orange-200">
+                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-card-title text-orange-700">最坚定的长期主义</h3>
+                    <p class="text-slate-600">我们不寻求短期利益，我们寻求与 <span class="placeholder">[目标客户]</span> 共同成长的十年战略伙伴关系</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">15 / 16</div>
+    </div>
+
+    <!-- Slide 16: Thank You -->
+    <div class="slide text-center">
+        <div class="mb-12">
+            <h1 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#1e5a6e] to-[#3b82f6] bg-clip-text text-transparent">
+                谢谢
+            </h1>
+            <h2 class="text-3xl text-slate-600 font-medium">
+                携手共创医养金融新未来
+            </h2>
+        </div>
+        
+        <div class="absolute bottom-12 left-0 right-0">
+            <div class="max-w-2xl mx-auto p-6 bg-slate-50 rounded-xl border-2 border-slate-200">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <div>
+                        <p class="text-sm text-slate-500 mb-1">联系人</p>
+                        <p class="text-lg font-semibold text-slate-700"><span class="placeholder">[ 您的姓名 / 职务 ]</span></p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-slate-500 mb-1">电话</p>
+                        <p class="text-lg font-semibold text-slate-700"><span class="placeholder">[ 您的电话 ]</span></p>
+                    </div>
+                    <div class="md:col-span-2">
+                        <p class="text-sm text-slate-500 mb-1">邮箱</p>
+                        <p class="text-lg font-semibold text-slate-700"><span class="placeholder">[ 您的邮箱 ]</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-counter">16 / 16</div>
+    </div>
+
+</body>
+</html>
