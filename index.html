@@ -14,25 +14,26 @@
         }
         
         /* Slide container */
-        
-    .slide {
-        width: 33.87cm;
-        height: 19.05cm;
-        margin: 0 auto;
-        padding: 4rem 5rem;
-        background-image: url('/slide-background.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 1rem;
-        box-shadow: 0 0 0 rgba(0,0,0,0);
-        display: block;
-        position: relative;
-        overflow: hidden;
-        page-break-after: always;
-        break-after: page;
-    }
-    
+        .slide {
+            width: 33.87cm;
+            height: 19.05cm;
+            max-width: 33.87cm;
+            min-height: 19.05cm;
+            margin: 2rem auto;
+            padding: 4rem 5rem;
+            /* Added background image */
+            background-image: url('/slide-background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 1rem;
+            box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.08), 0 10px 20px -10px rgba(0, 0, 0, 0.04);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+        }
         
         /* Decorative elements */
         .slide::before {
@@ -236,25 +237,10 @@
         
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            
-    .slide {
-        width: 33.87cm;
-        height: 19.05cm;
-        margin: 0 auto;
-        padding: 4rem 5rem;
-        background-image: url('/slide-background.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        border-radius: 1rem;
-        box-shadow: 0 0 0 rgba(0,0,0,0);
-        display: block;
-        position: relative;
-        overflow: hidden;
-        page-break-after: always;
-        break-after: page;
-    }
-    
+            .slide {
+                padding: 2rem 1.5rem;
+                min-height: auto;
+            }
             
             .slide-title {
                 font-size: 2rem;
@@ -264,11 +250,40 @@
                 font-size: 2rem;
             }
         }
+    
+    .ppt-page {
+        width: 1920px;
+        height: 1080px;
+        margin: 0 auto 40px auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        position: relative;
+        box-sizing: border-box;
+    }
+    .slide {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 4rem 5rem;
+        background-image: url('/slide-background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 1rem;
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
+        overflow: hidden;
+    }
     </style>
 </head>
 <body class="bg-slate-50 py-8" style="margin:0; padding:0; background:#fff;">
 <!-- Slide 1: Cover Page -->
-<div class="slide text-center">
+<div class="ppt-page"><div class="slide text-center">
 <div class="mb-8">
 <div class="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold mb-6">
                 战略合作提案
@@ -287,9 +302,9 @@
 <p class="text-sm text-slate-400 mt-2">2025年10月</p>
 </div>
 <div class="slide-counter">1 / 16</div>
-</div>
+</div></div>
 <!-- Slide 2: Executive Summary -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">执行摘要：我们的"航母级"客户开拓计划</h2>
 <div class="slide-content space-y-6">
 <div class="flex items-start gap-4">
@@ -344,9 +359,9 @@
 </div>
 </div>
 <div class="slide-counter">2 / 16</div>
-</div>
+</div></div>
 <!-- Slide 3: Table of Contents -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title text-center mb-12">目 录</h2>
 <div class="slide-content">
 <div class="space-y-4 max-w-3xl mx-auto">
@@ -383,9 +398,9 @@
 </div>
 </div>
 <div class="slide-counter">3 / 16</div>
-</div>
+</div></div>
 <!-- Slide 4: Market Opportunity -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">1.1 市场机遇：医养行业——万亿级的蓝海市场</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -425,9 +440,9 @@
 </div>
 </div>
 <div class="slide-counter">4 / 16</div>
-</div>
+</div></div>
 <!-- Slide 5: Customer Overview (Hospital) -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">2.1 目标客户（医院）全景</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -479,9 +494,9 @@
 </div>
 </div>
 <div class="slide-counter">5 / 16</div>
-</div>
+</div></div>
 <!-- Slide 6: Employee Structure -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">2.2 核心客群（医院员工）结构</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -542,9 +557,9 @@
 </div>
 </div>
 <div class="slide-counter">6 / 16</div>
-</div>
+</div></div>
 <!-- Slide 7: Group Ecosystem -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">2.3 目标客户（集团）全景：庞大的养老生态</h2>
 <div class="slide-content">
 <div class="mb-6">
@@ -604,9 +619,9 @@
 </div>
 </div>
 <div class="slide-counter">7 / 16</div>
-</div>
+</div></div>
 <!-- Slide 8: Core Strategy -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">3.1 核心战略：从"单点"到"圈、链、群"立体作战</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -645,9 +660,9 @@
 </div>
 </div>
 <div class="slide-counter">8 / 16</div>
-</div>
+</div></div>
 <!-- Slide 9: Circle Strategy -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">3.2 "圈"字诀：抢占场景，构建两大生态圈</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -707,9 +722,9 @@
 </div>
 </div>
 <div class="slide-counter">9 / 16</div>
-</div>
+</div></div>
 <!-- Slide 10: Chain Strategy -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">3.3 "链"字诀：渗透全链，锁定四大环节</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -764,9 +779,9 @@
 </div>
 </div>
 <div class="slide-counter">10 / 16</div>
-</div>
+</div></div>
 <!-- Slide 11: Group Strategy -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">3.4 "群"字诀：深耕客群，批量转化高价值零售客户</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -808,9 +823,9 @@
 </div>
 </div>
 <div class="slide-counter">11 / 16</div>
-</div>
+</div></div>
 <!-- Slide 12: Strategic Loop -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">3.5 战略闭环："圈链群"协同作战数据预估</h2>
 <div class="slide-content">
 <div class="grid grid-cols-2 md:grid-cols-3 gap-5">
@@ -853,9 +868,9 @@
 </div>
 </div>
 <div class="slide-counter">12 / 16</div>
-</div>
+</div></div>
 <!-- Slide 13: Implementation -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">4.1 实施路径与组织保障</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -911,9 +926,9 @@
 </div>
 </div>
 <div class="slide-counter">13 / 16</div>
-</div>
+</div></div>
 <!-- Slide 14: Goals & Benefits -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title">5.1 核心目标与战略价值</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -966,9 +981,9 @@
 </div>
 </div>
 <div class="slide-counter">14 / 16</div>
-</div>
+</div></div>
 <!-- Slide 15: Why Choose Us -->
-<div class="slide">
+<div class="ppt-page"><div class="slide">
 <h2 class="slide-title text-center">为什么选择我们？</h2>
 <div class="slide-content">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -1011,9 +1026,9 @@
 </div>
 </div>
 <div class="slide-counter">15 / 16</div>
-</div>
+</div></div>
 <!-- Slide 16: Thank You -->
-<div class="slide text-center">
+<div class="ppt-page"><div class="slide text-center">
 <div class="mb-12">
 <h1 class="text-6xl font-extrabold mb-6 bg-gradient-to-r from-[#1e5a6e] to-[#3b82f6] bg-clip-text text-transparent">
                 谢谢
@@ -1041,6 +1056,6 @@
 </div>
 </div>
 <div class="slide-counter">16 / 16</div>
-</div>
+</div></div>
 </body>
 </html>
